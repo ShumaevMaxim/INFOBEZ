@@ -1,0 +1,21 @@
+def atbash_cipher(text):
+    result = ""
+    for char in text:
+        if char.isalpha():
+            if char.islower():
+                result += chr(ord('a') + ord('z') - ord(char))
+            else:
+                result += chr(ord('A') + ord('Z') - ord(char))
+        else:
+            result += char
+    return result
+
+print("Введите текст: ")
+text = input()
+
+encrypted_text = atbash_cipher(text)
+decrypted_text = atbash_cipher(encrypted_text)
+
+print("Исходный текст:", text)
+print("Зашифрованный текст:", encrypted_text)
+print("Расшифрованный текст:", decrypted_text)
